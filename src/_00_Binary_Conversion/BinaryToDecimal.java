@@ -13,6 +13,7 @@ public class BinaryToDecimal {
 			1. Start from the right most digit of the binary number and assign that bit the value of 1.
 		 	 	eg: 0	1	0	1	1	0
 		                      			1 
+		                      			
 			2. As you move to the left, assign the next digit a value that is double the previous digit.
 				eg: 0	1	0	1	1	0
 				    32	16	8	4	2	1
