@@ -16,10 +16,12 @@ public class BinaryPrinter {
 		
 		// Use the & operator to "mask" the bit in the one's place
 		// This can be done by "anding" (&) it with the value of 1
-		
+		byte c = (byte)(b>>7); 
+		c = (byte)(c & 1);
 		// Print the result using System.out.print (NOT System.out.println)
-		
+		System.out.print(c);
 		//Use this method to print the remaining 7 bits of b
+		for()
 	}
 	
 	public void printShortBinary(short s) {
