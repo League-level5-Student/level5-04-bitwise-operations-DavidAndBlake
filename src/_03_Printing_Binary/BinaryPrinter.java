@@ -22,7 +22,7 @@ public class BinaryPrinter {
 //		System.out.print((b&0b00000001)>>0);
 		byte bitToShift = (byte)0b10000000;
 		for(int i = 0; i<=7; i++) {
-			bitToShift = (byte) ((byte)bitToShift>>1);
+			bitToShift = (byte) (byte)(bitToShift>>1);
 			int bitPlace = i;
 			System.out.print((b&bitToShift)>>bitPlace);
 		}
