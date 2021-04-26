@@ -20,11 +20,12 @@ public class BinaryPrinter {
 //		System.out.print((b&0b00000100)>>2);
 //		System.out.print((b&0b00000010)>>1);
 //		System.out.print((b&0b00000001)>>0);
-		byte bitToShift = (byte)0b10000000;
+		int bitToShift = 0b10000000;
 		for(int i = 0; i<=7; i++) {
-			bitToShift = (byte) (byte)(bitToShift>>1);
-			int bitPlace = i;
+			byte bitPlace = (byte)(7-i);
+//			System.out.println("bitToShift = " + bitToShift);
 			System.out.print((b&bitToShift)>>bitPlace);
+			bitToShift = (bitToShift>>1);
 		}
 		// Use the & operator to "mask" the bit in the one's place
 		// This can be done by "anding" (&) it with the value of 1
@@ -63,6 +64,6 @@ public class BinaryPrinter {
 	public static void main(String[] args) {
 		// Test your methods here
 		BinaryPrinter printer = new BinaryPrinter();
-		printer.printByteBinary((byte) 12);
+		printer.printByteBinary((byte) 68);
 	}
 }
