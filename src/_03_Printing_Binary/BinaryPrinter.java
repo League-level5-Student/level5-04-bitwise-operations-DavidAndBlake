@@ -37,10 +37,13 @@ public class BinaryPrinter {
 	
 	public void printShortBinary(short s) {
 		// Create 2 byte variables
-		
+		byte firstByte;
+		byte secondByte;
 		// Use bit shifting and masking (&) to save the first
 		// 8 bits of s in one byte, and the second 8 bits of
 		// s in the other byte
+	
+		firstByte = 
 		
 		// Call printByteBinary twice using the two bytes
 		// Make sure they are in the correct order
