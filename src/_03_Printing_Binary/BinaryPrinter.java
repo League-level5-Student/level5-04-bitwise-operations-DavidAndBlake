@@ -32,7 +32,7 @@ public class BinaryPrinter {
 		
 		// Print the result using System.out.print (NOT System.out.println)
 		//Use this method to print the remaining 7 bits of b
-
+		
 	}
 	
 	public void printShortBinary(short s) {
@@ -43,9 +43,14 @@ public class BinaryPrinter {
 		// 8 bits of s in one byte, and the second 8 bits of
 		// s in the other byte
 	
-		firstByte = 
+		firstByte = (byte) (s&0xff);
+		secondByte = (byte) (s>>8);
 		
 		// Call printByteBinary twice using the two bytes
+		System.out.print("\nfirstByte = ");
+		printByteBinary (firstByte);
+		System.out.print("\nsecondByte = ");
+		printByteBinary(secondByte);
 		// Make sure they are in the correct order
 	}
 	
@@ -68,5 +73,6 @@ public class BinaryPrinter {
 		// Test your methods here
 		BinaryPrinter printer = new BinaryPrinter();
 		printer.printByteBinary((byte) 68);
+		printer.printShortBinary((short) 2057);
 	}
 }
