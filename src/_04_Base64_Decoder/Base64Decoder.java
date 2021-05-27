@@ -37,6 +37,11 @@ public class Base64Decoder {
 	//1. Complete this method so that it returns the the element in
 	//   the base64Chars array that corresponds to the passed in char.
 	public static byte convertBase64Char(char c){
+		for(int i = 0; i < base64Chars.length; i++) {
+			if(c == base64Chars[i]) {
+				return (byte)i;
+			}
+		}
 		return 0;
 	}
 	
@@ -44,6 +49,12 @@ public class Base64Decoder {
 	//   characters long and return an array of 3 bytes (24 bits). The byte 
 	//   array should be the binary value of the encoded characters.
 	public static byte[] convert4CharsTo24Bits(String s){
+		//need to shift the bits in such a way where I can pair the digits together by adding in order to create 3 lines of 6 digits from the 8 bit sections.
+		byte sByte0 = (byte) s.charAt(0);
+		byte sByte1 = (byte) s.charAt(1);
+		byte sByte2 = (byte) s.charAt(2);
+		byte sByte3 = (byte) s.charAt(3);
+		sByte0 = (byte) (sByte0 << 2);
 		return null;
 	}
 	
