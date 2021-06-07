@@ -50,11 +50,18 @@ public class Base64Decoder {
 	//   array should be the binary value of the encoded characters.
 	public static byte[] convert4CharsTo24Bits(String s){
 		//need to shift the bits in such a way where I can pair the digits together by adding in order to create 3 lines of 6 digits from the 8 bit sections.
-		byte sByte0 = (byte) s.charAt(0);
-		byte sByte1 = (byte) s.charAt(1);
-		byte sByte2 = (byte) s.charAt(2);
-		byte sByte3 = (byte) s.charAt(3);
-		sByte0 = (byte) (sByte0 << 2);
+		byte sByte0 = (byte) convertBase64Char (s.charAt(0));
+		byte sByte1 = (byte) convertBase64Char (s.charAt(1));
+		byte sByte2 = (byte) convertBase64Char (s.charAt(2));
+		byte sByte3 = (byte) convertBase64Char (s.charAt(3));
+		System.out.println(sByte0);
+		byte sByte00 = (byte) (sByte0 << 2);
+		byte sByte10 = (byte) (sByte1 >> 4);
+		byte sByte20 = (byte) (sByte2 >> 6);
+		byte sByte30 = (byte) (sByte3 >> 8);
+		byte[] bArray = new byte[3];
+		bArray[0] = (byte) (sByte00+sByte10);
+		//
 		return null;
 	}
 	
